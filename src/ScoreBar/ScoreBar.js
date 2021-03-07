@@ -6,16 +6,22 @@ import "../App.scss";
 class ScoreBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { highlighted: true };
   }
 
   render() {
+    let scoreA = "ScoreA";
+    let scoreB = "ScoreB";
+    if (!this.props.TurnA) {
+      scoreA = "ScoreA NotHighlighted";
+    } else {
+      scoreB = "ScoreB NotHighlighted";
+    }
     return (
       <div className="ScoreBar">
-        <div className="ScoreA">
+        <div className={scoreA}>
           <Score
             player="Player 1"
-            highlighted={this.state.highlighted}
+            highlighted={this.props.TurnA}
             score={this.props.ScoreA}
           />
         </div>
@@ -23,10 +29,10 @@ class ScoreBar extends React.Component {
           <Timer GameOver={this.props.GameOver} />
           <button onClick={(e) => this.props.resetGame(e)}>reset Game</button>
         </div>
-        <div className="ScoreB">
+        <div className={scoreB}>
           <Score
             player="Player 2"
-            highlighted={!this.state.highlighted}
+            highlighted={!this.props.TurnA}
             score={this.props.ScoreB}
           />
         </div>

@@ -9,25 +9,18 @@ class App extends React.Component {
     super(props);
     this.increaseScore = this.increaseScore.bind(this);
     this.resetGame = this.resetGame.bind(this);
-    this.checkForPair = this.checkForPair.bind(this);
+    this.changeTurn = this.changeTurn.bind(this);
     this.state = {
-      secondFlip: false,
+      PairsLeft: 9,
       ScoreA: 0,
       ScoreB: 0,
       TurnA: true,
-      Match: false,
       GameOver: false,
     };
   }
 
   resetGame() {
     window.location.reload();
-  }
-
-  gameOver() {
-    this.setState({
-      GameOver: true,
-    });
   }
 
   increaseScore() {
@@ -40,17 +33,20 @@ class App extends React.Component {
         ScoreB: this.state.ScoreB + 1,
       });
     }
+    if (this.state.PairsLeft === 0) {
+      this.setState({
+        GameOver: true,
+      });
+    } else {
+      this.setState({
+        PairsLeft: this.state.PairsLeft - 1,
+      });
+    }
   }
   changeTurn() {
     this.setState({
       TurnA: !this.state.TurnA,
     });
-  }
-
-  checkForPair() {
-    if (this.state.secondFlip) {
-      this.changeTurn();
-    }
   }
 
   render() {
@@ -66,6 +62,7 @@ class App extends React.Component {
         <GameBoard
           increaseScore={this.increaseScore}
           gameOver={this.gameOver}
+          changeTurn={this.changeTurn}
         />
       </div>
     );

@@ -8,7 +8,7 @@ class Score extends React.Component {
   render() {
     if (this.props.highlighted) {
       return (
-        <div>
+        <div className={this.props.player}>
           <h2>-{this.props.player}-</h2>
           <h2>score: {this.props.score} </h2>
         </div>

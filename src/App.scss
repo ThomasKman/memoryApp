@@ -3,15 +3,18 @@
 }
 .ScoreA {
   grid-column-start: 1;
-  background-color: blue;
-  color: white;
+  background-color: rgb(97, 218, 17);
+  color: black;
   text-align: center;
 }
 .ScoreB {
   grid-column-start: 3;
-  background-color: red;
-  color: white;
+  background-color: rgb(255, 238, 0);
+  color: black;
   text-align: center;
+}
+.NotHighlighted {
+  opacity: 60%;
 }
 .Timer {
   text-align: center;
@@ -20,9 +23,9 @@
 
 .ScoreBar {
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 40% 20% 40%;
   height: 10vh;
-  background-color: cyan;
+  background-color: white;
 }
 
 .GameContainer {
@@ -30,7 +33,7 @@
   grid-template-columns: auto 730px auto;
   width: 100%;
   height: 90vh;
-  background-color: grey;
+  background-color: white;
 }
 .Gameboard {
   display: flex;
@@ -109,33 +112,43 @@ h2 {
 }
 
 .id1 {
-  background-color: brown;
+  background-image: url("./assets/cat1.png");
+  background-size: cover;
 }
 .id2 {
-  background-color: teal;
+  background-image: url("./assets/cat2.jpg");
+  background-size: cover;
 }
 .id3 {
-  background-color: orange;
+  background-image: url("./assets/cat3.jpg");
+  background-size: cover;
 }
 .id4 {
-  background-color: blue;
+  background-image: url("./assets/cat4.jpg");
+  background-size: cover;
 }
 .id5 {
-  background-color: green;
+  background-image: url("./assets/cat5.jpg");
+  background-size: cover;
 }
 
 .id6 {
-  background-color: hotpink;
+  background-image: url("./assets/cat6.jpg");
+  background-size: cover;
 }
 .id7 {
-  background-color: black;
+  background-image: url("./assets/cat7.jpg");
+  background-size: cover;
 }
 .id8 {
-  background-color: blueviolet;
+  background-image: url("./assets/cat8.jpg");
+  background-size: cover;
 }
 .id9 {
-  background-color: chocolate;
+  background-image: url("./assets/cat9.jpg");
+  background-size: cover;
 }
-.id10 {
-  background-color: crimson;
+.id0 {
+  background-image: url("./assets/cat0.jpg");
+  background-size: cover;
 }

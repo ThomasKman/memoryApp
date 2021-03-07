@@ -10,23 +10,18 @@ class Card extends React.Component {
     };
   }
 
-  flipCard() {
-    if (!this.state.CardFlipped) {
-      this.setState({
-        CardClass: "card flipped",
-        CardFlipped: true,
-      });
-    } else {
-      this.setState({
-        CardClass: "card",
-        CardFlipped: false,
-      });
-    }
-  }
-
   render() {
     return (
-      <div class={this.state.CardClass} onClick={(e) => this.flipCard(e)}>
+      <div
+        class={this.props.status}
+        onClick={(e) =>
+          this.props.handleClick(
+            this.props.index,
+            this.props.id.charAt(12),
+            this.props.status
+          )
+        }
+      >
         <div className="front face" />
         <div className={this.props.id}></div>
       </div>
