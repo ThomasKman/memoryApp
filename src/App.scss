@@ -1,3 +1,5 @@
+//------------ScoreBar----------
+
 .NotHighlighted {
   opacity: 50%;
 }
@@ -28,6 +30,7 @@
   background-color: white;
 }
 
+//------------GameBoard----------
 .GameContainer {
   display: grid;
   grid-template-columns: auto 730px auto;
@@ -44,7 +47,7 @@ h2 {
   margin: 5px;
 }
 
-/*-----Cards-----------------*/
+//----------------Cards------------
 
 .card {
   margin: 5px;

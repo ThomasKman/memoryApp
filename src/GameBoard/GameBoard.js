@@ -12,7 +12,6 @@ class GameBoard extends React.Component {
       cardStatusList: [],
       cardIdList: [],
     };
-
     for (let i = 0; i < 20; i++) {
       this.state.cardStatusList.push("card");
     }
@@ -29,7 +28,9 @@ class GameBoard extends React.Component {
     if (status === "card") {
       let copy = [...this.state.cardStatusList];
       copy[index] = "card flipped";
-      this.state.cardStatusList = copy;
+      this.setState({
+        cardStatusList: copy,
+      });
       if (this.state.flippedCardIndex > 19) {
         this.setState({ flippedCardIndex: index, flippedCardID: id });
       } else {
@@ -46,10 +47,14 @@ class GameBoard extends React.Component {
             let copy = [...this.state.cardStatusList];
             copy[index] = "card";
             copy[this.state.flippedCardIndex] = "card";
-            this.state.cardStatusList = copy;
-            this.setState({ flippedCardIndex: 20, flippedCardID: 0 });
+
+            this.setState({
+              cardStatusList: copy,
+              flippedCardIndex: 20,
+              flippedCardID: 0,
+            });
             this.props.changeTurn();
-          }, 1000);
+          }, 850);
         }
       }
     }
