@@ -4,10 +4,6 @@ import Score from "./Score.js";
 import "../App.scss";
 
 class ScoreBar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let scoreA = "ScoreA";
     let scoreB = "ScoreB";

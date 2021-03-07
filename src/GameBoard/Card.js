@@ -2,18 +2,10 @@ import React from "react";
 import "../App.scss";
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      CardClass: "card",
-      CardFlipped: false,
-    };
-  }
-
   render() {
     return (
       <div
-        class={this.props.status}
+        className={this.props.status}
         onClick={(e) =>
           this.props.handleClick(
             this.props.index,

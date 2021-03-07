@@ -12,20 +12,16 @@ class GameBoard extends React.Component {
       cardStatusList: [],
       cardIdList: [],
     };
-    {
-      for (let i = 0; i < 20; i++) {
-        this.state.cardStatusList.push("card");
-      }
-    }
-    this.scrambleCards();
-  }
 
-  scrambleCards() {
+    for (let i = 0; i < 20; i++) {
+      this.state.cardStatusList.push("card");
+    }
     let numbers = [];
     for (let i = 0; i < 10; i++) {
       numbers.push(i);
       numbers.push(i);
     }
+    numbers = numbers.sort(() => Math.random() - 0.5);
     this.state.cardIdList = numbers.sort(() => Math.random() - 0.5);
   }
 
