@@ -1,6 +1,5 @@
 import "./App.scss";
 import ScoreBar from "./ScoreBar/ScoreBar.js";
-import Clock from "./Pages/Clock/Clock.js";
 import React from "react";
 import GameBoard from "./GameBoard/GameBoard.js";
 
